@@ -4,7 +4,7 @@ services:
     -docker
 
 addons:
-    ssh_known_hosts: git.example.com
+    ssh_known_hosts: 206.189.136.60
 
 before_install:
     - docker build -t kpkeerthi25/docker-react-test -f ./client/Dockerfile.dev ./client
