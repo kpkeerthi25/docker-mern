@@ -4,13 +4,13 @@ services:
     client:
         build:
             context: ./client
-            dockerfile: Dockerfile.dev
+            dockerfile: Dockerfile
         tty: true
     
     api:
         build: 
             context: ./server
-            dockerfile: Dockerfile.dev
+            dockerfile: Dockerfile
 
     nginx:
         restart: always
