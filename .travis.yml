@@ -17,4 +17,5 @@ after_success:
     - docker push kpkeerthi25/multi-nginx:latest
     - docker push kpkeerthi25/multi-server:latest
     - ssh keerthi@206.189.136.60
-    - 
+    - docker-compose down
+    - docker-compose up -d
