@@ -3,6 +3,9 @@ sudo: required
 services:
     -docker
 
+addons:
+    ssh_known_hosts: git.example.com
+
 before_install:
     - docker build -t kpkeerthi25/docker-react-test -f ./client/Dockerfile.dev ./client
 scripts:
