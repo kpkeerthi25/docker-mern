@@ -13,6 +13,8 @@ after_success:
     - docker build -t kpkeerthi25/multi-nginx ./nginx
     - docker build -t kpkeerthi25/multi-server ./server
     - echo "$Docker_pass" | docker login -u "$Docker_id" --password-stdin
-    - docker push kpkeerthi25/multi-client
-    - docker push kpkeerthi25/multi-nginx 
-    - docker push kpkeerthi25/multi-server
+    - docker push kpkeerthi25/multi-client:latest
+    - docker push kpkeerthi25/multi-nginx:latest
+    - docker push kpkeerthi25/multi-server:latest
+    - ssh keerthi@206.189.136.60
+    - 

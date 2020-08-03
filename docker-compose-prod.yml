@@ -1,0 +1,11 @@
+version: '3'
+
+services: 
+    client:
+        image: kpkeerthi25/multi-client:latest
+    api:
+        image: kpkeerthi25/multi-server:latest
+    nginx:
+        image: kpkeerthi25/multi-nginx:latest
+        ports: 
+            - "3000:80"
