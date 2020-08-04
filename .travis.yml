@@ -13,12 +13,15 @@ scripts:
 
 after_success:
     - docker build -t kpkeerthi25/multi-client ./client
-    # - docker build -t kpkeerthi25/multi-nginx ./nginx
-    # - docker build -t kpkeerthi25/multi-server ./server
-    # - echo "$Docker_pass" | docker login -u "$Docker_id" --password-stdin
-    # - docker push kpkeerthi25/multi-client:latest
-    # - docker push kpkeerthi25/multi-nginx:latest
-    # - docker push kpkeerthi25/multi-server:latest
-    - eval ssh keerthi@206.189.136.60
-    - docker-compose down
-    - docker-compose up -d
+    - docker build -t kpkeerthi25/multi-nginx ./nginx
+    - docker build -t kpkeerthi25/multi-server ./server
+    - echo "$Docker_pass" | docker login -u "$Docker_id" --password-stdin
+    - docker push kpkeerthi25/multi-client:latest
+    - docker push kpkeerthi25/multi-nginx:latest
+    - docker push kpkeerthi25/multi-server:latest
+
+deploy:
+    provider: script
+    script: bash digitalOcean.sh
+    on:
+        branch: master
